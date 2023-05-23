@@ -21,6 +21,7 @@ jobs:
         run: make all
   release-snap:
     name: Release stable snaps
+    if: github.repository == "canonical/athena-core"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -38,6 +39,7 @@ jobs:
           release: stable
   release-docker:
     name: Release stable docker images
+    if: github.repository == "canonical/athena-core"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
